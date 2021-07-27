@@ -84,11 +84,11 @@ class TodoList {
      container.appendChild(li);
    });
    document.querySelectorAll('input[type="checkbox"]').forEach((check) => {
-     check.addEventListener('change', this.handleCompletedStatus, false);
+     check.addEventListener('change', this.editCompletedStatus, false);
    });
-   document.querySelector('#newTodo').addEventListener('keypress', this.handleNewTodo, false);
+   document.querySelector('#newTodo').addEventListener('keypress', this.editNewTodo, false);
 
-   document.querySelector('#clear-all').addEventListener('click', this.handleClearAllCompleted, false);
+   document.querySelector('#clear-all').addEventListener('click', this.editClearAllCompleted, false);
 
    document.querySelectorAll('input.edit').forEach((input) => {
      input.addEventListener('keypress', this.handleEditTodo, false);
