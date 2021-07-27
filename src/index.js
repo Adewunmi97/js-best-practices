@@ -13,7 +13,7 @@ class TodoList {
     this.todos = getTodos();
   }
 
- handleCompletedStatus = (e) => {
+ editCompletedStatus = (e) => {
    const todos = getTodos();
    updateStatus(e, todos);
  }
@@ -27,13 +27,13 @@ class TodoList {
    }
  }
 
- handleDeleteTodo = (e) => {
+ editDeleteTodo = (e) => {
    const index = parseInt(e.target.dataset.index, 10) - 1;
    deleteTodoFromList(index);
    deleteTodoFromStorage(index);
  }
 
- handleClearAllCompleted = () => {
+ editClearAllCompleted = () => {
    const todos = getTodos();
    const filteredTodos = clearAll(todos);
    orderAndSave(filteredTodos);
@@ -41,7 +41,7 @@ class TodoList {
    this.displayList();
  }
 
- handleNewTodo = (e) => {
+ editNewTodo = (e) => {
    const todos = getTodos();
    if (e.keyCode === 13) {
      const newTodo = createTodo(e.target.value, todos);
@@ -95,7 +95,7 @@ class TodoList {
    });
 
    document.querySelectorAll('.todo-delete').forEach((trash) => {
-     trash.addEventListener('click', this.handleDeleteTodo, false);
+     trash.addEventListener('click', this.editDeleteTodo, false);
    });
  }
 }
